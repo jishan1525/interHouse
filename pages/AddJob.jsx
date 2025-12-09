@@ -154,7 +154,7 @@ const PostJob = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary mb-4">
             Post Job
           </button>
         </form>
