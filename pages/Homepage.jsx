@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import axios from "axios";
 import { Link } from "react-router";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Homepage = () => {
   const [search, setSearch] = useState("");
@@ -37,10 +37,11 @@ const Homepage = () => {
       const response = await axios.delete(
         `https://intern-house-backend-psi.vercel.app/jobs/${id}`
       );
-
+      
       if (response.status === 200 || response.status === 201) {
-        setJobData((prev) => prev.filter((job) => job._id !== id));
         toast.success("Job deleted successfully");
+        setJobData((prev) => prev.filter((job) => job._id !== id));
+        
       } else {
         toast.error("Failed to delete job");
       }
@@ -52,6 +53,7 @@ const Homepage = () => {
   return (
     <>
       <NavBar />
+      <ToastContainer/>
       <div className="container mt-4">
         <input
           type="text"

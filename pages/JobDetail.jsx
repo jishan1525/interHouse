@@ -72,7 +72,7 @@ const JobDetail = () => {
 
                 <div className="mb-2">
                   <strong>Qualifications:</strong>
-                  <ul className="mt-2">
+                  <ol className="mt-2">
                     {qualificationList.length > 0 ? (
                       qualificationList.map((q, idx) => (
                         <li key={idx}>{q}</li>
@@ -80,7 +80,7 @@ const JobDetail = () => {
                     ) : (
                       <li>No specific qualifications mentioned.</li>
                     )}
-                  </ul>
+                  </ol>
                 </div>
               </div>
             </div>
